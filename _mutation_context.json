@@ -1,5 +1,5 @@
 {
-  "mutation_type": "hybrid",
+  "mutation_type": "prompt_tweak",
   "parent_id": "1dcb6677-9c65-4f74-af08-3c3b1e5ba7ba",
   "parent_name": "pragmatic-builder-v2"
 }
