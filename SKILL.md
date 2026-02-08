@@ -1,6 +1,6 @@
 ---
 name: pragmatic-builder-v2-v2
-description: Evolved builder using reference_swap mutation
+description: Evolved builder using hybrid mutation
 version: 0.1.0
 license: Apache-2.0
 ---
@@ -14,10 +14,10 @@ Generate practical agent skills from idea prompts with fast validation and clear
 3. target output directory `.soup/skills/<skill-name>/`
 
 # Mutation Focus
-- Applied mutation type: `reference_swap`
+- Applied mutation type: `hybrid`
 - Parent strategy seed: --- name: pragmatic-builder-v2 description: An evolved pragmatic builder that mandates a CHANGELOG.md for better version tracking. version: 0.2.0
-- New directives: Include a troubleshooting section for common failure modes.
-- New directives: Reference lightweight examples instead of long narrative context blocks.
+- New directives: Add a concise constraints section and require a references/ directory.
+- New directives: Mandate one validation command and one fallback path in generated skills.
 
 # Generation Workflow
 1. Derive a kebab-case name (3-50 chars) from the prompt.
