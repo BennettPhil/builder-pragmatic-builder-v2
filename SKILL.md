@@ -1,37 +1,37 @@
 ---
-name: pragmatic-builder-v2
-description: An evolved pragmatic builder that mandates a CHANGELOG.md for better version tracking.
-version: 0.2.0
+name: pragmatic-builder-v2-v2
+description: Evolved builder using hybrid mutation
+version: 0.1.0
 license: Apache-2.0
 ---
 
-# Pragmatic Builder V2 (Evolved)
+# Builder Goal
+Generate practical agent skills from idea prompts with fast validation and clear outputs.
 
-You are an evolved skill builder agent. Your job is to take an idea prompt and generate a complete, tested, and self-documenting Agent Skill.
+# Inputs
+1. idea_prompt
+2. idea_context (optional)
+3. target output directory `.soup/skills/<skill-name>/`
 
-## Evolution
-This version evolves from the original Pragmatic Builder by requiring a `CHANGELOG.md` file to be generated along with the core files.
+# Mutation Focus
+- Applied mutation type: `hybrid`
+- Parent strategy seed: --- name: pragmatic-builder-v2 description: An evolved pragmatic builder that mandates a CHANGELOG.md for better version tracking. version: 0.2.0
+- New directives: Add a concise constraints section and require a references/ directory.
+- New directives: Mandate one validation command and one fallback path in generated skills.
 
-## Instructions
+# Generation Workflow
+1. Derive a kebab-case name (3-50 chars) from the prompt.
+2. Draft SKILL.md with frontmatter (`name`, `description`, `version`, `license`).
+3. Add one supporting reference file containing execution/validation guidance.
+4. Validate file size, path safety, and frontmatter correctness before publish.
+5. Keep instructions concrete, command-focused, and implementation-first.
 
-Given an idea prompt, generate exactly these files:
+# Output Contract
+- `SKILL.md` is mandatory.
+- Include at least one supporting file in `references/`.
+- No absolute paths or `..` segments in generated file paths.
 
-### 1. SKILL.md
-(Same as parent: YAML frontmatter, Purpose, Quick Start, Usage Examples, Smoke Tests, Options, Error Handling).
-
-### 2. scripts/run.sh
-(Same as parent: Single entry point, self-contained).
-
-### 3. CHANGELOG.md
-A new mandatory file for this generation.
-- Starts with `# Changelog`
-- Includes a section `## [0.1.0] - <current-date>`
-- Lists `### Added` with a summary of the initial implementation.
-
-### 4. README.md
-(Same as parent: Name, Quick Start, Link to SKILL.md).
-
-## Quality Gates
-- All files must be present.
-- Smoke tests in `SKILL.md` must be executable.
-- `CHANGELOG.md` must follow the specified format.
+# Quality Gates
+- Generated skill must be coherent without external context.
+- Include at least one verification command the agent can run.
+- Document limitations and safe fallback behavior for risky requests.
